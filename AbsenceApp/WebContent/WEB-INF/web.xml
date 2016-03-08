@@ -26,7 +26,28 @@
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 	<resource-ref>
-        <res-ref-name>jdbc/DefaultDB</res-ref-name>
-        <res-type>javax.sql.DataSource</res-type>
-    </resource-ref>
+		<res-ref-name>jdbc/DefaultDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+	</resource-ref>
+	<login-config>
+		<auth-method>FORM</auth-method>
+	</login-config>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Protected</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Administrator</role-name>
+			<role-name>NietAdmin</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-role>
+		<description>Administration users</description>
+		<role-name>Administrator</role-name>
+	</security-role>
+	<security-role>
+		<description>Niet Administration users</description>
+		<role-name>NietAdmin</role-name>
+	</security-role>
 </web-app>
