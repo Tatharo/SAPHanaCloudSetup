@@ -3,8 +3,40 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<script src="index.js"></script>
+<script>
+document.write("<h2>" +"Document.write method" + "</h2>");
+</script>
 </head>
 <body>
-<p>Its alive</p>
+
+	<h1>Its alive JavaScript</h1>
+	<button type="button" onclick="clearHTML()">Clear HTML by overwriting</button>
+	
+	<p id="demo">JavaScript can change HTML content.</p>
+
+	<button type="button"
+		onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">
+		Click Me!</button>
+	<button type="button"
+		onclick="document.getElementById('demo').innerHTML = 'Hello <br> JavaScript!'">
+		Or Me!</button>
+	<button type="button" onclick="changeStyle()">Change Style!</button>
+	<br>
+	<br>
+	<h1>Change Picture Script</h1>
+	<img id="myImage" onclick="changeImage()" src="random_pic1.jpg"
+		width="180" height="180">
+
+	<p>Click picture to change it.</p>
+
+	<h1>JavaScript Can Validate Input</h1>
+
+	<p id="input1-10">Please input a number between 1 and 10:</p>
+
+	<input id="numb">
+
+	<button type="button" onclick="validateNumber()">Submit</button>
+	
 </body>
 </html>
